@@ -177,7 +177,7 @@ public class GuitarHeroVisual {
 		for(String item : songs) {
 			System.out.printf("%4s %s\n", " " , item);
 		}
-		System.out.println("Press enter for manual song input.");
+		System.out.println("Type the song name or press enter for manual song input.");
 		
 		
 		boolean ok = false;
@@ -283,7 +283,7 @@ public class GuitarHeroVisual {
 	}
 	
 	public static void main(String[] args) throws Exception {
-		System.out.println("Guitar Hero Project CS3\nCreated by Jack Le 2020-2021\n");
+		System.out.println("Guitar Hero Project with Visuals CS3\nCreated by Jack Le 2020-2021\n");
 		GuitarHeroVisual gh = new GuitarHeroVisual();
 		gh.start();
 		gh.waitForFinish();
@@ -354,7 +354,6 @@ public class GuitarHeroVisual {
 				if(manual) {
 					if (StdDraw.hasNextKeyTyped()) {
 						pressed =  "" + StdDraw.nextKeyTyped();
-						//System.out.println(pressed);
 						
 						if(keyboard.containsKey(pressed)) {
 							int index = keyboard.get(pressed)-1;
