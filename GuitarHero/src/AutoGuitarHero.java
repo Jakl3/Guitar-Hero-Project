@@ -11,7 +11,7 @@ import java.io.*;
  * get songs from here: https://pianoletternotes.blogspot.com/
  * 
  */
-public class AutoGuitar {
+public class AutoGuitarHero {
 	
 	private Stopwatch s;
 	private GuitarString[] strings;
@@ -160,7 +160,7 @@ public class AutoGuitar {
 	public static void main(String[] args) throws Exception
 	{
 		System.out.println("Guitar Hero Project CS3\nCreated by Jack Le 2020-2021\n");
-		new AutoGuitar().run();
+		new AutoGuitarHero().run();
 	}	
 	
 	public void run() throws Exception {

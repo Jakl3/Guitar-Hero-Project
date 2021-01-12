@@ -1,6 +1,13 @@
-import java.util.*;
 import java.awt.Color;
-import java.io.*;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Queue;
+import java.util.Scanner;
 @SuppressWarnings("serial")
 
 /**
@@ -22,7 +29,8 @@ public class GuitarHeroVisual {
 	private volatile Queue<ArrayList<Letter>> queue;
 	private volatile boolean goodKey;
 	private List<ArrayList<Chord>> list;
-	private int score;
+	private static int score;
+	private static int totalScore;
 	private static final Map<String,String[]> map = new HashMap<String,String[]>() {{
 		
 		put("_C",new String[] {"1","q"});
@@ -283,7 +291,8 @@ public class GuitarHeroVisual {
 			System.out.println("Threads are dead.");
 		}
 		StdDraw.clear();
-		StdDraw.text(0.5, 0.5, "Song over :)");
+		StdDraw.setPenColor(Color.RED);
+		StdDraw.text(0.5, 0.5, "Your score was: " + score + " out of " + totalScore);
 		StdDraw.show();
 	}	
 	
@@ -360,6 +369,8 @@ public class GuitarHeroVisual {
 							if(list.get(0).y <= 0.18 && list.get(0).y >= 0.08) {
 								for(Letter t : list) {
 									if(!t.played && t.key.equals(pressed)) {
+										score++;
+										totalScore++;
 										ok = true;
 										t.played = true;
 										t.c = Color.GREEN;
@@ -452,11 +463,13 @@ public class GuitarHeroVisual {
 								if(t.y < 0.08 && !t.played) {
 									goodKey = false;
 									t.played = true;
+									totalScore++;
 								}
 							}
 							else {
 								if(!t.played && t.y < 0.15) {
-									
+									score++;
+									totalScore++;
 									int index = t.index;
 									if(index != -1)
 										strings[index].pluck();
@@ -479,7 +492,10 @@ public class GuitarHeroVisual {
 						StdDraw.line(0,0.13,1,0.13);
 						
 						StdDraw.setPenColor(StdDraw.LIGHT_GRAY);
-						StdDraw.filledRectangle(0, 1, 1.06, 0.06);						
+						StdDraw.filledRectangle(0, 1, 1.06, 0.06);	
+						
+						StdDraw.setPenColor(StdDraw.WHITE);
+						StdDraw.text(0.5, 0.965, "Score: "+score);
 						
 					}
 					StdDraw.show();
