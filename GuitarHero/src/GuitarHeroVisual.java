@@ -19,6 +19,7 @@ import java.util.Scanner;
  */
 public class GuitarHeroVisual {
 	
+	// hello
 	private static volatile GuitarString[] strings;
 	private static final double yShift = 0.017;
 	private static Thread audioThread;
