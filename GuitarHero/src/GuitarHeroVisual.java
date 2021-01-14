@@ -245,8 +245,8 @@ public class GuitarHeroVisual {
 		}
 		
 		System.out.println("Do you want the song to play automatically? (Y/N)");
-		String s1 = kb.nextLine().toLowerCase();
 		while(true) {
+			String s1 = kb.nextLine().toLowerCase();
 			if(s1.equals("y") || s1.equals("yes")) {
 				manual = false;
 				break;
