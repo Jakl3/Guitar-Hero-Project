@@ -161,6 +161,47 @@ public class GuitarHeroVisual {
 		put("8",60);
 	}};
 	
+	public static void main(String[] args) throws Exception {
+		System.out.println("Guitar Hero Project with Visuals CS3\nCreated by Jack Le 2020-2021\n");
+		GuitarHeroVisual gh = new GuitarHeroVisual();
+		gh.start();
+		gh.waitForFinish();
+		if(!visualThread.isAlive() && !audioThread.isAlive()) {
+			System.out.println("Threads are dead.");
+		}
+		StdDraw.clear();
+		StdDraw.setPenColor(Color.RED);
+		StdDraw.text(0.5, 0.5, "Your score was: " + score + " out of " + totalScore);
+		StdDraw.show();
+	}	
+
+	private void start() throws Exception {
+		queue = new LinkedList<>();
+		goodKey = true;
+		list = new ArrayList<>();
+		pressed = "";
+		strings = new GuitarString[map.size()];
+		
+		read();
+		for(int i = 0; i < map.size(); i++) {
+			strings[i] = new GuitarString(440 * Math.pow(1.059464, i - 28));
+		}
+		StdDraw.enableDoubleBuffering();
+		StdDraw.setCanvasSize(1200,600);
+		
+		Visuals visual = new Visuals();
+        visualThread = new Thread(visual);
+        visualThread.start();
+	    Audio audio = new Audio();
+        audioThread = new Thread(audio);
+        audioThread.start();
+	}
+	
+	private void waitForFinish() throws InterruptedException {
+		audioThread.join();
+		visualThread.join();
+	}
+
 	private void read() throws Exception {
 		Scanner kb = new Scanner(System.in);
 		System.out.println("Which song would you like to play?");
@@ -240,87 +281,6 @@ public class GuitarHeroVisual {
 		
 		kb.close();
 		f.close();
-	}
-	
-	private class Chord {
-		int string;
-		String chord;
-		
-		public Chord(int s, String c) {
-			string = s;
-			chord = c;
-		}
-		
-		public String toString() {
-			return string + " " + chord;
-		}
-		
-		public char at(int i) {
-			return chord.charAt(i);
-		}
-	}
-	
-	private class Letter {
-		String key;
-		double x;
-		double y;
-		boolean played;
-		int index;
-		Color c;
-		
-		public Letter(String key, double x, double y, int ind) {
-			this.key = key;
-			this.x = x;
-			this.y = y;
-			played = false;
-			index = ind;
-			c = new Color(245,78,78);
-		}
-		
-		public String toString() {
-			return key + " " + x + " " + y;
-		}
-	}
-	
-	public static void main(String[] args) throws Exception {
-		System.out.println("Guitar Hero Project with Visuals CS3\nCreated by Jack Le 2020-2021\n");
-		GuitarHeroVisual gh = new GuitarHeroVisual();
-		gh.start();
-		gh.waitForFinish();
-		if(!visualThread.isAlive() && !audioThread.isAlive()) {
-			System.out.println("Threads are dead.");
-		}
-		StdDraw.clear();
-		StdDraw.setPenColor(Color.RED);
-		StdDraw.text(0.5, 0.5, "Your score was: " + score + " out of " + totalScore);
-		StdDraw.show();
-	}	
-	
-	public void start() throws Exception {
-		queue = new LinkedList<>();
-		goodKey = true;
-		list = new ArrayList<>();
-		pressed = "";
-		strings = new GuitarString[map.size()];
-		
-		read();
-		for(int i = 0; i < map.size(); i++) {
-			strings[i] = new GuitarString(440 * Math.pow(1.059464, i - 28));
-		}
-		StdDraw.enableDoubleBuffering();
-		StdDraw.setCanvasSize(1200,600);
-		
-		Visuals visual = new Visuals();
-        visualThread = new Thread(visual);
-        visualThread.start();
-	    Audio audio = new Audio();
-        audioThread = new Thread(audio);
-        audioThread.start();
-	}
-	
-	public void waitForFinish() throws InterruptedException {
-		audioThread.join();
-		visualThread.join();
 	}
 		
 	private class Audio implements Runnable {
@@ -510,6 +470,46 @@ public class GuitarHeroVisual {
 					
 				}
 			}
+		}
+	}
+
+	private class Chord {
+		int string;
+		String chord;
+		
+		public Chord(int s, String c) {
+			string = s;
+			chord = c;
+		}
+		
+		public String toString() {
+			return string + " " + chord;
+		}
+		
+		public char at(int i) {
+			return chord.charAt(i);
+		}
+	}
+	
+	private class Letter {
+		String key;
+		double x;
+		double y;
+		boolean played;
+		int index;
+		Color c;
+		
+		public Letter(String key, double x, double y, int ind) {
+			this.key = key;
+			this.x = x;
+			this.y = y;
+			played = false;
+			index = ind;
+			c = new Color(245,78,78);
+		}
+		
+		public String toString() {
+			return key + " " + x + " " + y;
 		}
 	}
 	
