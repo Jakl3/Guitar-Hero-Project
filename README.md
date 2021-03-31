@@ -5,7 +5,7 @@ This project is a simple recreation of the popular Guitar Hero game. The code is
 .
 ├── GuitarHero                        # Main project files
 │   ├── src                           # Source
-    │   ├── AutoGuitarHero.java       # Automatic player
+│   │   ├── AutoGuitarHero.java       # Automatic player
 │   │   ├── GuitarHero.java           # Manual player
 │   │   ├── GuitarHeroLite.java       # Light demonstration program
 │   │   ├── GuitarHeroVisual.java     # Main program - culminates all other files
