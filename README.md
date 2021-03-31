@@ -2,4 +2,4 @@ This is a simple recreation of the popular Guitar Hero game. The code is entirel
 
 Below is a Video Demonstration of the game.
 
-[![Video Demonstration](https://img.youtube.com/vi/WWzUKfgd2AU/0.jpg)](https://www.youtube.com/watch?v=WWzUKfgd2AU "Everything Is AWESOME")
+[![Video Demonstration](https://img.youtube.com/vi/WWzUKfgd2AU/0.jpg)](https://www.youtube.com/watch?v=WWzUKfgd2AU "Open in YouTube")
