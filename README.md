@@ -22,14 +22,18 @@ This project is a simple recreation of the popular Guitar Hero game. The code is
 ├── images                            # Images for demonstration
 └── README.md                         # ReadMe
 ```
+## Console
+This is what console input looks like.
+
+![Console Image](images/console.png?raw=true "Image")
 
 # Demonstrations
 ## Image
 This is an image of the user interface when the program is ran.
-![Alt text](images/Demonstration.png?raw=true "Image")
+![Image demonstration](images/Demonstration.png?raw=true "Image")
 
 ## Video
 This is a video demonstration of the program with sound, along with code explanations. (click below)
-[![Video Demonstration](images/Video.png)](https://www.youtube.com/watch?v=WWzUKfgd2AU "Open in YouTube")
+[![Video demonstration](images/Video.png)](https://www.youtube.com/watch?v=WWzUKfgd2AU "Open in YouTube")
 
 
