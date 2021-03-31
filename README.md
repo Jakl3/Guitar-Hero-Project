@@ -24,10 +24,12 @@ This project is a simple recreation of the popular Guitar Hero game. The code is
 ```
 
 # Demonstrations
-## This is an image of the program
+## Image
+This is an image of the user interface when the program is ran.
 ![Alt text](images/Demonstration.png?raw=true "Image")
 
-## This is a video demonstration of the game.
+## Video
+This is a video demonstration of the program with sound, along with code explanations.
 [![Video Demonstration](images/Video.png)](https://www.youtube.com/watch?v=WWzUKfgd2AU "Open in YouTube")
 
 
