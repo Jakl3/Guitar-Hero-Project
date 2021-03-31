@@ -29,7 +29,7 @@ This is an image of the user interface when the program is ran.
 ![Alt text](images/Demonstration.png?raw=true "Image")
 
 ## Video
-This is a video demonstration of the program with sound, along with code explanations.
+This is a video demonstration of the program with sound, along with code explanations. (click below)
 [![Video Demonstration](images/Video.png)](https://www.youtube.com/watch?v=WWzUKfgd2AU "Open in YouTube")
 
 
