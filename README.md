@@ -2,6 +2,7 @@
 This project is a simple recreation of the popular Guitar Hero game. The code is entirely written in Java, using the Standard Library from Princeton University for graphics and audio. There is a set of pre-loaded and supported songs. However, any song from [here](https://pianoletternotes.blogspot.com/) will work, as long as you include the number of lines in the input.
 
 ## Directory
+```
 .
 ├── GuitarHero                        # Main project files
 │   ├── src                           # Source
@@ -20,12 +21,13 @@ This project is a simple recreation of the popular Guitar Hero game. The code is
 │   └── ...                           # etc.
 ├── images                            # Images for demonstration
 └── README.md                         # ReadMe
+```
 
 # Demonstrations
 ## This is an image of the program
-![Alt text](images/Demonstration.png?raw=true "Title")
+![Alt text](images/Demonstration.png?raw=true "Image")
 
 ## This is a video demonstration of the game.
-[![Video Demonstration](https://img.youtube.com/vi/WWzUKfgd2AU/0.jpg)](https://www.youtube.com/watch?v=WWzUKfgd2AU "Open in YouTube")
+[![Video Demonstration](images/Video.png)](https://www.youtube.com/watch?v=WWzUKfgd2AU "Open in YouTube")
 
 
